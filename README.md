@@ -14,3 +14,12 @@ https://www.tutorialspoint.com/angular7/angular7_environment_setup.htm
 **IDE** : [Visual Studio Code](https://code.visualstudio.com/) (Recommended) or [IntelliJ](https://www.jetbrains.com/idea/download/) IDEA or [WebStorm](https://www.jetbrains.com/webstorm/download/#section=windows)
 
 ***Note**: Angular 7.0 has updated its dependencies to support Typescript 3.1, RxJS 6.3 and Node 10.*
+
+**Angular CLI Command:**
+
+|Command|Description|
+|-------|-----------|
+|**npm install -g @angular/cli <br/>(or) <br/>npm i -g @angular/cli** | To Install Angular CLI globally |
+|**npm install @angular/cli@7.3.10 <br/>(or) <br/>npm i @angular/cli@7.3.10** | To Install Angular CLI Specific version |
+|**ng new \<project name\>** | To create a new Angular CLI Project <br/> ***eg.** ng new ng7-pre* |
+|**ng generate component \<component name\> <br/>(or)<br/>ng g c \<component name\>**| To create a new Angular CLI Component <br/> ***eg.** ng generate component loginComponent*|
