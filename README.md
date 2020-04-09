@@ -32,3 +32,4 @@ https://www.tutorialspoint.com/angular7/angular7_environment_setup.htm
 **Important Topics:**
 
 [Difference between Template-Driven and Reactive Forms in Angular](https://www.pluralsight.com/guides/difference-between-template-driven-and-reactive-forms-angular)
+[Angular Forms Guide - Template Driven and Reactive Forms](https://blog.angular-university.io/introduction-to-angular-2-forms-template-driven-vs-model-driven/)
