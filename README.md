@@ -7,6 +7,8 @@ Get Started Angular 7
 https://coursetro.com/posts/code/171/Angular-7-Tutorial---Learn-Angular-7-by-Example
 https://www.tutorialspoint.com/angular7/angular7_environment_setup.htm
 
+Demo : https://github.com/richardsforu/cts-angular7/blob/master/UI/Angular
+
 **Prerequisites:**
 
 **Node.js** (click [here](https://nodejs.org/en/download/releases/) and select Node.js 10.X which is supported by Angular 7 version)
@@ -26,3 +28,7 @@ https://www.tutorialspoint.com/angular7/angular7_environment_setup.htm
 |**ng build \<project\> [options] <br/>(or) <br/>ng b <project> [options]**|Compiles an Angular app into an output directory named dist/ at the given output path. Must be executed from within a workspace directory. [More info](https://angular.io/cli/build)|
 |**ng serve <project> [options] <br/>(or) <br/>ng s <project> [options]**|Builds and serves your app, rebuilding on file changes. [More info](https://angular.io/cli/serve)|
 |**ng test <project> [options] <br/>(or) <br/>ng t <project> [options]**|BRuns unit tests in a project. [More info](https://angular.io/cli/test)|
+
+**Topics:**
+
+[Difference between Template-Driven and Reactive Forms in Angular](https://www.pluralsight.com/guides/difference-between-template-driven-and-reactive-forms-angular)
