@@ -7,7 +7,7 @@ Get Started Angular 7
 https://coursetro.com/posts/code/171/Angular-7-Tutorial---Learn-Angular-7-by-Example
 https://www.tutorialspoint.com/angular7/angular7_environment_setup.htm
 
-Demo : https://github.com/richardsforu/cts-angular7/blob/master/UI/Angular
+**Demo :** https://github.com/richardsforu/cts-angular7/blob/master/UI/Angular
 
 **Prerequisites:**
 
