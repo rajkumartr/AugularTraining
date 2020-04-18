@@ -1,0 +1,61 @@
+<p>
+  databinding-component works!
+</p>
+<h1>{{text1}}</h1>
+<input type="text" value="{{inputText}}" /><br />
+One way binding :{{inputText}}<br />
+<h1 [innerText]="text2"></h1>
+<div [innerHTML]="divText"></div><br />
+<div [innerText]="divText"></div><br />
+<input type="text" [value]="inputText2" />
+
+<h3 [innerText]="text3"></h3>
+<button (click)="fn1()">Click here</button>
+
+<h3 [innerText]="heading4"></h3>
+<input type="text" [(ngModel)]="twowayText" value="{{twowayText}}" /><br />
+<input type="text" [(ngModel)]="twowayText" [value]="twowayText" /><br />
+Two way binding :{{twowayText}}<br />
+
+<br /><br />
+
+Number 1 : <input type="text" [(ngModel)]="num1"><br />
+Number 2 : <input type="text" [(ngModel)]="num2"><br />
+Sum of Number 1 and  Number 2 is {{+num1 + +num2}}
+
+----------
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-databinding-component',
+  templateUrl: './databinding-component.component.html',
+  styleUrls: ['./databinding-component.component.css']
+})
+export class DatabindingComponentComponent implements OnInit {
+
+  text1 = 'This is an example of Interpolation / String Interpolation';
+  inputText = 'Interpolation';
+
+  text2 = 'This is an example of Property Binding';
+  divText = '<b>Property Binding</b>';
+  inputText2 = 'Input Text : Property Binding';
+  
+  text3 = 'This is an example of Event Binding';
+
+  heading4 = 'This is an example of Two-way Binding';
+  twowayText = 'Two way Binding';
+
+  num1:number = 0;
+  num2:number = 0;
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+  fn1() {
+    this.divText = '<b><i>Property Binding</i></b>';
+  }
+
+}
