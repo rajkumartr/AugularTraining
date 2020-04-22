@@ -1,0 +1,21 @@
+<h1>{{text1}}</h1>
+<input type="text" value="{{inputText}}" /><br />
+One way binding :{{inputText}}<br />
+<h1 [innerText]="text2"></h1>
+<div [innerHTML]="divText"></div><br />
+<div [innerText]="divText"></div><br />
+<input type="text" [value]="inputText2" />
+
+<h3 [innerText]="text3"></h3>
+Event Binding : <button (click)="fn1()">Click here</button>
+
+<h3 [innerText]="heading4"></h3>
+Using Interpolation : <input type="text" [(ngModel)]="twowayText" value="{{twowayText}}" /><br />
+Using Property Binding : <input type="text" [(ngModel)]="twowayText" [value]="twowayText" /><br /> 
+Two way binding :{{twowayText}}<br />
+
+<br /><br />
+
+Number 1 : <input type="text" [(ngModel)]="num1"><br />
+Number 2 : <input type="text" [(ngModel)]="num2"><br />
+Sum of Number 1 and  Number 2 is {{+num1 + +num2}}
