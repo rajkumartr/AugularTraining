@@ -1,0 +1,58 @@
+<style>
+  .blue {
+    background-color: lightblue;
+  }
+
+  .green {
+    background-color: lightgray;
+  }
+
+  .a0 {
+    background-color: aqua;
+  }
+
+  .a1 {
+    background-color: blueviolet;
+  }
+
+  .a2 {
+    background-color: aqua;
+  }
+
+  .a3 {
+    background-color: blueviolet;
+  }
+
+  .a4 {
+    background-color: aqua;
+  }
+
+  .a5 {
+    background-color: blueviolet;
+  }
+
+  .a6 {
+    background-color: aqua;
+  }
+
+  label {
+    padding-left: 10px;
+  }
+</style>
+
+<br />
+Hidden Property : <input type="text" [hidden]='true' /> <br />
+*ngIf : <input type="text" *ngIf='showHide' /><br />
+<br />
+<br />
+<li *ngFor='let day of weekdays; index as i' [ngClass]="'a' + i">{{i}} : {{day}}</li>
+
+<div [ngClass]="{'green':true,'blue':true}">This is an example of ngClass Attribute Directive</div>
+
+<div [ngStyle]="{'font-weight':'bold'}">This is an example of ngStyle Attribute Directive</div>
+<br />
+<!-- <li *ngFor='let day of weekdays; index as i' [ngClass]="{'green': i % 2 == 0? true : false,'blue': i % 2 != 0? true : false }">{{i}} : {{day}}</li> -->
+<br />
+<p>Custom Directive</p>
+<br />
+<div appErrormsg>This is an example of Custom Directive</div>
