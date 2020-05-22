@@ -1,0 +1,26 @@
+<p>tdf4 works!</p>
+<div class="container">
+    <form #frm1="ngForm">
+        <div class="form-group">
+            <label for="txtfname">First Name :</label>
+            <input type="text" class="form-control" name="txtfname" ngModel />
+        </div>
+        <div class="form-group">
+            <label for="txtlname">Last Name :</label>
+            <input type="text" class="form-control" name="txtlname" ngModel/>
+        </div>
+        <div class="form-group">
+            <label for="txtemail">Email :</label>
+            <input type="text" class="form-control" name="txtemail" ngModel/>
+        </div>
+        <div class="form-group">
+            <label for="txtpwd">Password :</label>
+            <input type="text" class="form-control" name="txtpwd" ngModel/>
+        </div>
+        <div class="form-group">
+            <label for="txtconfirmpwd">Confirm Password :</label>
+            <input type="text" class="form-control" name="txtconfirmpwd" ngModel/>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="frmSubmit()">Submit</button>
+    </form>
+</div>

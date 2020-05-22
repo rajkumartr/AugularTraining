@@ -1,0 +1,28 @@
+<p>tdf3 works!</p>
+<div class="container">
+    <form #frm="ngForm">
+        <div class="form-group">
+            <label for="txtfname">First Name :</label>
+            <input type="text" class="form-control" name="txtfname" [(ngModel)]="model.fname" />
+        </div>
+        <div class="form-group">
+            <label for="txtlname">Last Name :</label>
+            <input type="text" class="form-control" name="txtlname" [(ngModel)]="model.lname" />
+        </div>
+        <div class="form-group">
+            <label for="txtemail">Email :</label>
+            <input type="text" class="form-control" name="txtemail" [(ngModel)]="model.email" />
+        </div>
+        <div class="form-group">
+            <label for="txtpwd">Password :</label>
+            <input type="text" class="form-control" name="txtpwd" [(ngModel)]="model.pwd" />
+        </div>
+        <div class="form-group">
+            <label for="txtconfirmpwd">Confirm Password :</label>
+            <input type="text" class="form-control" name="txtconfirmpwd" [(ngModel)]="model.confirmpwd" />
+        </div>
+        <button type="button" class="btn btn-primary" (click)="frmSubmit()">Submit</button>
+    </form>
+</div>
+
+{{model | json}}

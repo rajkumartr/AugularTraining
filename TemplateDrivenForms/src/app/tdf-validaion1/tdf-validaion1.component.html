@@ -1,0 +1,44 @@
+<p>tdf-validaion1 works!</p>
+<div class="container">
+
+    frm1.valid : {{frm1.valid}}<br />
+    frm1.invalid : {{frm1.invalid}}<br />
+    frm1.pristine : {{frm1.pristine}}<br />
+    frm1.dirty : {{frm1.dirty}}<br />
+    frm1.submitted : {{frm1.submitted}}<br />
+    <form #frm1="ngForm" autocomplete="off">
+        <div class="form-group">
+            <label for="txtfname">First Name :</label>
+            <input type="text" class="form-control" name="txtfname" ngModel #fnameRef="ngModel" required [ngClass]="{'is-invalid':fnameRef.dirty && fnameRef.invalid}" />
+            fnameRef.valid : {{fnameRef.valid}}<br />
+            fnameRef.invalid : {{fnameRef.invalid}}<br />
+            fnameRef.pristine : {{fnameRef.pristine}}<br />
+            fnameRef.dirty : {{fnameRef.dirty}}<br />
+            fnameRef.touched : {{fnameRef.touched}}<br />
+            fnameRef.untouched : {{fnameRef.untouched}}<br />
+        </div>
+        <div class="form-group">
+            <label for="txtlname">Last Name :</label>
+            <input type="text" class="form-control" name="txtlname" ngModel #lnameRef="ngModel" required/>
+            lnameRef.valid : {{lnameRef.valid}}<br />
+            lnameRef.invalid : {{lnameRef.invalid}}<br />
+            lnameRef.pristine : {{lnameRef.pristine}}<br />
+            lnameRef.dirty : {{lnameRef.dirty}}<br />
+            lnameRef.touched : {{lnameRef.touched}}<br />
+            lnameRef.untouched : {{lnameRef.untouched}}<br />
+        </div>
+        <div class="form-group">
+            <label for="txtemail">Email :</label>
+            <input type="text" class="form-control" name="txtemail" ngModel required/>
+        </div>
+        <div class="form-group">
+            <label for="txtpwd">Password :</label>
+            <input type="text" class="form-control" name="txtpwd" ngModel required/>
+        </div>
+        <div class="form-group">
+            <label for="txtconfirmpwd">Confirm Password :</label>
+            <input type="text" class="form-control" name="txtconfirmpwd" ngModel required/>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="frm1.invalid" >Submit</button>
+    </form>
+</div>
