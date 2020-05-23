@@ -9,6 +9,8 @@ import { Tdf2Component } from './tdf2/tdf2.component';
 import { Tdf3Component } from './tdf3/tdf3.component';
 import { Tdf4Component } from './tdf4/tdf4.component';
 import { TdfValidaion1Component } from './tdf-validaion1/tdf-validaion1.component';
+import { TdfValidation2Component } from './tdf-validation2/tdf-validation2.component';
+import { MyBgColorDirective } from './tdf-validation2/my-bg-color.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { TdfValidaion1Component } from './tdf-validaion1/tdf-validaion1.componen
     Tdf2Component,
     Tdf3Component,
     Tdf4Component,
-    TdfValidaion1Component
+    TdfValidaion1Component,
+    TdfValidation2Component,
+    MyBgColorDirective
   ],
   imports: [
     BrowserModule,
