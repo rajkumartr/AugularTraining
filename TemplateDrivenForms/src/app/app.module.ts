@@ -11,6 +11,7 @@ import { Tdf4Component } from './tdf4/tdf4.component';
 import { TdfValidaion1Component } from './tdf-validaion1/tdf-validaion1.component';
 import { TdfValidation2Component } from './tdf-validation2/tdf-validation2.component';
 import { MyBgColorDirective } from './tdf-validation2/my-bg-color.directive';
+import { CustomvalidatorDirective } from './tdf-validation2/customvalidator.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MyBgColorDirective } from './tdf-validation2/my-bg-color.directive';
     Tdf4Component,
     TdfValidaion1Component,
     TdfValidation2Component,
-    MyBgColorDirective
+    MyBgColorDirective,
+    CustomvalidatorDirective
   ],
   imports: [
     BrowserModule,

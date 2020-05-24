@@ -1,36 +1,53 @@
 <p>tdf-validation2 works!</p>
 
-<div appMyBgColor>
+<div appMyBgColor style="width:100px">
     This is div with custom Directive.
 </div>
 <div class="container">
-    <form #frm1="ngForm" autocomplete="off">
+    <form #frm1="ngForm" autocomplete="off" appCustomvalidator>
         <div class="form-group">
-            <label for="txtfname">First Name :</label>
-            <input type="text" class="form-control" name="txtfname" ngModel #fnameRef="ngModel" required [ngClass]="{'is-invalid':fnameRef.dirty && fnameRef.invalid}" appMyBgColor/>
-            <span *ngIf="!fnameRef.pristine && fnameRef.invalid" class="invalid-feedback" >First Name is required</span>
+            <label for="txtfname">First Name :<span appMyBgColor
+                    *ngIf="!fnameRef.pristine && fnameRef.invalid">*</span></label>
+            <input type="text" class="form-control" id="txtfname" name="txtfname" ngModel #fnameRef="ngModel" required
+                appMyBgColor minlength="3" />
+            fnameRef.errors : {{fnameRef.errors | json}} <br />
+            fnameRef.invalid : {{fnameRef.invalid | json}}<br />
+            fnameRef.valid : {{fnameRef.valid | json}}<br />
+            <div>
+                <div *ngIf="fnameRef.errors?.required">First Name is required</div>
+                <div *ngIf="fnameRef.errors?.minlength">First Name must be at least 3 characters</div>
+            </div>
         </div>
         <div class="form-group">
             <label for="txtlname">Last Name :</label>
-            <input type="text" class="form-control" name="txtlname" ngModel #lnameRef="ngModel" required minlength="3" [ngClass]="{'is-invalid':lnameRef.dirty && lnameRef.invalid}"/>
-            <span *ngIf="lnameRef.invalid" class="invalid-feedback" >Last Name is required</span>
+            <input type="text" class="form-control" name="txtlname" ngModel #lnameRef="ngModel" required 
+                [ngClass]="{'is-invalid':lnameRef.dirty && lnameRef.invalid}" />
+            <span *ngIf="lnameRef.invalid" class="invalid-feedback">Last Name is required</span>
             lnameRef.errors : {{lnameRef.errors | json}}<br />
         </div>
         <div class="form-group">
             <label for="txtemail">Email :</label>
-            <input type="text" class="form-control" name="txtemail" ngModel #emailRef="ngModel" required [ngClass]="{'is-invalid':emailRef.dirty && emailRef.invalid}"/>
-            <span *ngIf="!emailRef.pristine && emailRef.invalid" class="invalid-feedback" >Email ID is required</span>
+            <input type="text" class="form-control" name="txtemail" ngModel #emailRef="ngModel" required email
+                [ngClass]="{'is-invalid':emailRef.dirty && emailRef.invalid}" />
+            <span *ngIf="!emailRef.pristine && emailRef.invalid" class="invalid-feedback">Email ID is required</span>
         </div>
         <div class="form-group">
             <label for="txtpwd">Password :</label>
-            <input type="text" class="form-control" name="txtpwd" ngModel #pwdRef="ngModel" required [ngClass]="{'is-invalid':pwdRef.dirty && pwdRef.invalid}"/>
-            <span *ngIf="!pwdRef.pristine && pwdRef.invalid" class="invalid-feedback" >Password is required</span>
+            <input type="text" class="form-control" name="txtpwd" ngModel #pwdRef="ngModel" required
+                [ngClass]="{'is-invalid':pwdRef.dirty && pwdRef.invalid}" />
+            <span *ngIf="!pwdRef.pristine && pwdRef.invalid" class="invalid-feedback">Password is required</span>
         </div>
         <div class="form-group">
             <label for="txtconfirmpwd">Confirm Password :</label>
-            <input type="text" class="form-control" name="txtconfirmpwd" ngModel #confirmpwdRef="ngModel" required [ngClass]="{'is-invalid':confirmpwdRef.dirty && confirmpwdRef.invalid}"/>
-            <span *ngIf="!confirmpwdRef.pristine && confirmpwdRef.invalid" class="invalid-feedback" >Confirm Password is required</span>
+            <input type="text" class="form-control" name="txtconfirmpwd" ngModel #confirmpwdRef="ngModel" required
+                [ngClass]="{'is-invalid':confirmpwdRef.dirty && confirmpwdRef.invalid}" />
+            <!-- <span *ngIf="!confirmpwdRef.pristine && confirmpwdRef.invalid">Confirm Password is required</span> -->
+            <div *ngIf="!confirmpwdRef.pristine && confirmpwdRef.invalid">
+                <span *ngIf="confirmpwdRef.errors?.required">Confirm Password is required</span>
+                <span *ngIf="confirmpwdRef.errors?.x1">Password and Confirm Password not matching</span>
+            </div>
+            {{confirmpwdRef.errors | json}}
         </div>
-        <button type="submit" class="btn btn-primary" [disabled]="frm1.invalid" >Submit</button>
+        <button type="submit" class="btn btn-primary" [disabled]="frm1.invalid">Submit</button>
     </form>
 </div>

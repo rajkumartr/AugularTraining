@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tdf-validation2.component.css']
 })
 export class TdfValidation2Component implements OnInit {
-
+  model: any = {};
   constructor() { }
 
   ngOnInit() {

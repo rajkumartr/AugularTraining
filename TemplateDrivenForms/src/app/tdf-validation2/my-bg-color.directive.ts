@@ -6,8 +6,9 @@ import { Directive, ElementRef } from '@angular/core';
 export class MyBgColorDirective {
 
   constructor(private elr: ElementRef) {
-    elr.nativeElement.style.backgroundColor = "red";
-    elr.nativeElement.innerText = "test data";
+    // HTML DOM Style Object : https://www.w3schools.com/jsref/dom_obj_style.asp
+    elr.nativeElement.style.color = 'red';
+    elr.nativeElement.style.fontStyle = 'italic';
    }
 
 }
