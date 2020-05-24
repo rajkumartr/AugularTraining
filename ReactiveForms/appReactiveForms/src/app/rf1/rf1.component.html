@@ -1,0 +1,31 @@
+<p>rf1 works!</p>
+<div class="container">
+    <form [formGroup]="frmGrp1" >
+        <div class="form-group">
+            <label for="txtfname">First Name :</label>
+            <input type="text" class="form-control" formControlName="txtfname" />
+            <div *ngIf="!frmGrp1.controls.txtfname.pristine && frmGrp1.controls.txtfname.invalid">
+                <span *ngIf="frmGrp1.controls.txtfname.errors?.required">First Name is required</span>
+                <span *ngIf="frmGrp1.controls.txtfname.errors?.minlength">Minimum Length is 4</span>
+            </div>
+            {{frmGrp1.controls.txtfname.errors | json}}
+        </div>
+        <div class="form-group">
+            <label for="txtlname">Last Name :</label>
+            <input type="text" class="form-control" formControlName="txtlname" />
+        </div>
+        <div class="form-group">
+            <label for="txtemail">Email :</label>
+            <input type="text" class="form-control" formControlName="txtemail" />
+        </div>
+        <div class="form-group">
+            <label for="txtpwd">Password :</label>
+            <input type="text" class="form-control" formControlName="txtpwd" />
+        </div>
+        <div class="form-group">
+            <label for="txtconfirmpwd">Confirm Password :</label>
+            <input type="text" class="form-control" formControlName="txtconfirmpwd" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
