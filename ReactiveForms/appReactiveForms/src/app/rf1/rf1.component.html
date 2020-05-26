@@ -20,11 +20,20 @@
         </div>
         <div class="form-group">
             <label for="txtpwd">Password :</label>
-            <input type="text" class="form-control" formControlName="txtpwd" />
+            <input type="text" class="form-control" formControlName="txtpwd"  [ngClass]="{'is-invalid': !frmGrp1.controls.txtpwd.pristine && frmGrp1.controls.txtpwd.invalid}"/>
+            <div *ngIf="!frmGrp1.controls.txtpwd.pristine && frmGrp1.controls.txtpwd.invalid" class="alert alert-danger" >
+                <span *ngIf="frmGrp1.controls.txtpwd.errors?.required">Password is required</span>
+                <span *ngIf="frmGrp1.controls.txtpwd.errors?.propMinimumLen">Minimum Length of Password is {{pwdminLen}}</span>
+            </div>
         </div>
         <div class="form-group">
             <label for="txtconfirmpwd">Confirm Password :</label>
-            <input type="text" class="form-control" formControlName="txtconfirmpwd" />
+            <input type="text" class="form-control" formControlName="txtconfirmpwd" [ngClass]="{'is-invalid': !frmGrp1.controls.txtconfirmpwd.pristine && frmGrp1.controls.txtconfirmpwd.invalid}"/>
+            <div *ngIf="!frmGrp1.controls.txtconfirmpwd.pristine && frmGrp1.controls.txtconfirmpwd.invalid" class="alert alert-danger" >
+                <span *ngIf="frmGrp1.controls.txtconfirmpwd.errors?.required">Confirm Password is required</span>
+                <span *ngIf="frmGrp1.controls.txtconfirmpwd.errors?.mustMatch">Password and Confirm Password is not matching</span>
+            </div>
+            {{frmGrp1.controls.txtconfirmpwd.errors | json}}
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class Rf1Component implements OnInit {
   frmGrp1: FormGroup;
+  pwdminLen: number = 5;
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -18,8 +19,36 @@ export class Rf1Component implements OnInit {
         txtemail: ['', [Validators.required, Validators.email]],
         txtpwd: ['', Validators.required],
         txtconfirmpwd: ['', Validators.required]
+      }, {
+        validator: [ this.matchPasswordField('txtpwd', 'txtconfirmpwd'), this.chkPasswordLen('txtpwd', this.pwdminLen)]
       }
     );
   }
-
+  matchPasswordField(pwd: string, confirmpwd: string) {
+    return (frmgrp: FormGroup) => {
+      const txtpwd = frmgrp.controls[pwd];
+      const txtconfirmpwd = frmgrp.controls[confirmpwd];
+      if (txtconfirmpwd.errors && !txtconfirmpwd.errors.mustMatch) {
+        return;
+      }
+      if (txtpwd.value !== txtconfirmpwd.value) {
+        txtconfirmpwd.setErrors({ mustMatch: true });
+      } else {
+        txtconfirmpwd.setErrors(null);
+      }
+    };
+  }
+  chkPasswordLen(pwd: string, minimumLen: number) {
+    return (frmgrp: FormGroup) => {
+      const txtpwd = frmgrp.controls[pwd];
+      if (txtpwd.errors && !txtpwd.errors.propMinimumLen) {
+        return;
+      }
+      if (txtpwd.value.length < minimumLen + 1) {
+        txtpwd.setErrors({ propMinimumLen: true });
+      } else {
+        txtpwd.setErrors(null);
+      }
+    };
+  }
 }
