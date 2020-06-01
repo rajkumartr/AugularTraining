@@ -8,4 +8,6 @@
 
 5. [Reactive Forms Validation](https://drive.google.com/file/d/1_jvzTd-mvnMRosGjU1YS5IvSXkX1mDOw/view?usp=sharing)
 
-5. [@Input, @Output, Services](https://drive.google.com/file/d/1enEVafuHT4qifUIc2dD6MjVznk2qp_Ei/view?usp=sharing)
+6. [@Input, @Output, Services](https://drive.google.com/file/d/1enEVafuHT4qifUIc2dD6MjVznk2qp_Ei/view?usp=sharing)
+
+7. [@Input, @Output, Services (Session 2)](https://drive.google.com/file/d/14HZ91JR0ySHve-oiWqYgaL74EbasRTKn/view?usp=sharing)
