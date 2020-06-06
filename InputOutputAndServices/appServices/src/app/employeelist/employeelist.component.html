@@ -1,0 +1,32 @@
+<p>employeelist works!</p>
+<table border="1">
+    <tr>
+      <th>e.id</th>
+      <th>e.userId</th>
+      <th>e.jobTitle</th>
+      <th>e.firstName</th>
+      <th>e.lastName</th>
+      <th>e.employeeCode</th>
+      <th>e.region</th>
+      <th>e.phoneNumber</th>
+      <th>e.emailAddress</th>
+      <th>Delete</th>
+    </tr>
+    <tr *ngFor="let e of empDetails">
+      <td>{{e.id}}</td>
+      <td>{{e.userId}}</td>
+      <td>{{e.jobTitle}}</td>
+      <td>{{e.firstName}}</td>
+      <td>{{e.lastName}}</td>
+      <td>{{e.employeeCode}}</td>
+      <td>{{e.region}}</td>
+      <td>{{e.phoneNumber}}</td>
+      <td>{{e.emailAddress}}</td>
+      <td><button type="button" (click)="selectEmployee(e.id)">Select</button><br /></td>
+      <td><button type="button" (click)="deleteEmployee(e.id)">Delete</button><br /></td>
+    </tr>
+  </table>
+
+  <button type="button" (click)="insertEmployee()">Insert New Employee</button><br />
+  <button type="button" (click)="updateEmployee()">Update Existing Employee Details</button><br />
+  <button type="button" (click)="deleteEmployee()">Delete Existing Employee Details</button><br />

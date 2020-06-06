@@ -1,0 +1,14 @@
+<div style="background-color: aquamarine;">
+    <p>manager works!</p>
+    <h1>{{responsefromEmployee}}</h1>
+</div>
+<button type="button" (click)="showVal()">Click here to get value</button>
+<button type="button" (click)="setVal()">Click here to show value</button>
+<h3>This is from Service : {{serviceVal}}</h3>
+<div style="background-color:cornflowerblue">
+    <app-employee [msg]=childMsg (respondBack)="acceptMsg($event)"></app-employee>
+</div>
+
+<div style="background-color:goldenrod">
+    <app-employee1></app-employee1>
+</div>
